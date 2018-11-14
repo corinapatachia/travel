@@ -1,0 +1,39 @@
+{
+  "name": "travel",
+  "version": "1.0.0",
+  "description": "travel custom app ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/corinapatachia/travel.git"
+  },
+  "keywords": [
+    "travel",
+    "custom",
+    "app"
+  ],
+  "author": "corinapatachia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/corinapatachia/travel/issues"
+  },
+  "homepage": "https://github.com/corinapatachia/travel#readme",
+  "dependencies": {
+    "@material-ui/core": "^3.5.1",
+    "babel-core": "^6.26.3",
+    "babel-preset-stage-1": "^6.24.1",
+    "context": "0.0.1",
+    "react": "^16.7.0-alpha.2",
+    "react-dom": "^16.7.0-alpha.2",
+    "webpack": "^4.25.1",
+    "webpack-dev-server": "^3.1.10"
+  },
+  "devDependencies": {
+    "babel-loader": "^8.0.4",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1"
+  }
+}
