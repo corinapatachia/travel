@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/corinapatachia/travel#readme",
   "dependencies": {
+    "@material-ui/core": "^3.5.1",
     "babel-core": "^6.26.3",
     "babel-preset-stage-1": "^6.24.1",
     "context": "0.0.1",
