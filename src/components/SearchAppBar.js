@@ -39,7 +39,7 @@ const styles = {
   },
 };
 
-const SimpleAppBar = (props) => {
+const SearchAppBar = (props) => {
 
   return (
       <AppBar position="static" color="default" style={styles.root}>
@@ -56,4 +56,4 @@ const SimpleAppBar = (props) => {
 }
 
 
-export default SimpleAppBar;
+export default SearchAppBar;

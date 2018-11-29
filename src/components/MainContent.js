@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import { Typography } from '@material-ui/core';
 const style = { 
     root: {
         backgroundColor: '#fff',
@@ -18,9 +19,9 @@ class MainContent extends React.Component{
     render() {
         return(
             <Fragment>
-                <p style={style.dreamText}>
+                <Typography style={style.dreamText}>
                     Start dreaming now
-                </p>
+                </Typography>
             </Fragment>
         )
     }
