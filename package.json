@@ -4,7 +4,7 @@
   "description": "travel custom app ",
   "main": "./src/index.js",
   "scripts": {
-    "start:dev": "webpack-dev-server --config webpack.config.js --mode development --open --hot",
+    "start": "webpack-dev-server --config webpack.config.js --mode development --open --hot",
     "build": "webpack --mode production"
   },
   "repository": {
@@ -24,6 +24,7 @@
   "homepage": "https://github.com/corinapatachia/travel#readme",
   "dependencies": {
     "@material-ui/core": "^3.5.1",
+    "@material-ui/icons": "^3.0.1",
     "babel-core": "^6.26.3",
     "babel-preset-react": "^6.24.1",
     "context": "0.0.1",
