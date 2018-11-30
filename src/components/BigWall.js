@@ -9,7 +9,7 @@ const style = {
         backgroundSize: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: '0 -204px',
-        height: '500px',
+        height: '800px',
         width: '80%%',
     },
     scrolltext: {
