@@ -2,15 +2,17 @@ import React, { Fragment } from 'react';
 import { Typography } from '@material-ui/core';
 import zIndex from '@material-ui/core/styles/zIndex';
 
-const topImage = '../../style/images/leVall.jpeg'
+const topImage = '../../style/images/leVall.jpeg';
 const style = {
     zepic: {
         backgroundImage: `url(${topImage})`,
         backgroundSize: 'center',
         backgroundRepeat: 'no-repeat',
-        backgroundPosition: '0 -204px',
+        backgroundPosition: '50% 100%',
         height: '800px',
-        width: '80%%',
+        position: 'relative',
+        // width: '120%',
+        maxWidth: '1280px',
     },
     scrolltext: {
         color: 'white',
@@ -29,7 +31,7 @@ const style = {
 };
 
 
-const BigWall = (props) => {
+const BigWall = () => {
     return (
        <Fragment>
             <div style={style.zepic} />
