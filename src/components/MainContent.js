@@ -1,10 +1,9 @@
 import React, { Fragment } from 'react';
-import { Typography, Button, Divider } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 import sampleStories from '../../data/data';
 import Story from './Story';
 import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
-
+import Divider from '@material-ui/core/Divider';
 
 const style = {
     root: {
@@ -18,6 +17,7 @@ const style = {
         fontWeight: 'normal',
         lineHeight: '1.1875em',
         textTransform: 'uppercase',
+        
     },
     gridList: {
         flexWrap: 'nowrap',

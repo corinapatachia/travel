@@ -13,6 +13,7 @@ const style = {
         position: 'relative',
         // width: '120%',
         maxWidth: '1280px',
+        bottom: '7vw',
     },
     scrolltext: {
         color: 'white',
@@ -35,12 +36,6 @@ const BigWall = () => {
     return (
        <Fragment>
             <div style={style.zepic} />
-            <Typography variant='h6' style={style.scrolltext}>
-                SCROLL TO DISCOVER
-                <img 
-                src="http://www.wordapp.io/wpsite/wp-content/uploads/2016/11/white-arrow-down.png"
-                style={style.imgscroll} />
-            </Typography>
        </Fragment>
 
     )

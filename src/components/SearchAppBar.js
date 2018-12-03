@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -61,74 +62,26 @@ const styles = {
 };
 
 class SearchAppBar extends React.Component {
-  // constructor(props) {
-  //   super(props);
+  constructor(props){
+    super(props);
 
-  //   this.state = {
-  //     anchorEl: null,
-  //     mobileMoreAnchorEl: null,
-  //     searchTerm: ''
-  //   };
+    this.state={
+      searchTerm: ''
+    }
 
-    // this.goToSearchResultsPage = this.goToSearchResultsPage.bind(this);
-    // this.handleMenuClose = this.handleMenuClose.bind(this);
-    // this.handleMobileMenuClose = this.handleMobileMenuClose.bind(this);
-    // this.handleMobileMenuOpen = this.handleMobileMenuOpen.bind(this);
-    // this.handleProfileMenuOpen = this.handleProfileMenuOpen.bind(this);
-  // }
-    searchTermInput = React.createRef();
-
-  // handleProfileMenuOpen(event) {
-  //   this.setState({ anchorEl: event.currentTarget });
-  // };
-
-  // handleMenuClose() {
-  //   this.setState({ anchorEl: null });
-  //   this.handleMobileMenuClose();
-  // };
-
-  // handleMobileMenuOpen(event) {
-  //   this.setState({ mobileMoreAnchorEl: event.currentTarget });
-  // };
-
-  // handleMobileMenuClose() {
-  //   this.setState({ mobileMoreAnchorEl: null });
-  // };
+    this.goToSearchResultsPage = this.goToSearchResultsPage.bind(this);
+  }
+  searchTermInput= React.createRef();
 
   goToSearchResultsPage(event) {
     event.preventDefault();
-    const searchTermCons = this.searchTermInput.value.value;
-    console.log(`redirenting to search results page with term ${searchTermCons}`);
-    this.props.history.push(`search_results/${searchTermCons}`);
+    // const searchTermCons = this.searchTermInput.value.value;
+    const searchTermCons = this.state.searchTerm;
+    // this.props.history.push(`search_results/${searchTermCons}`);
+    console.log(searchTermCons);
   }
 
   render() {
-    // const { anchorEl, mobileMoreAnchorEl } = this.state;
-    // const isMenuOpen = Boolean(anchorEl);
-    // const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-
-
-    // const renderMenu = (
-    //   <Menu
-    //     anchorEl={anchorEl}
-    //     anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-    //     transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-    //     open={isMenuOpen}
-    //     onClose={this.handleMenuClose}
-    //   >
-    //   </Menu>
-    // );
-    // const renderMobileMenu = (
-    //   <Menu
-    //     anchorEl={mobileMoreAnchorEl}
-    //     anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-    //     transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-    //     open={isMobileMenuOpen}
-    //     onClose={this.handleMobileMenuClose}
-    //   >
-    //   </Menu>
-    // );
-
 
     return (
       <AppBar position="static" color="default" style={styles.root}>
@@ -137,18 +90,15 @@ class SearchAppBar extends React.Component {
           <IconButton style={styles.menuButton} aria-label="Menu">
             <MenuIcon />
           </IconButton>
-          <Typography style={styles.title} variant="h6" color="textPrimary" noWrap>
-            Travel. Enjoy life.
-            </Typography>
           <div style={styles.search}>
             <div style={styles.searchIcon}>
               <SearchIcon />
             </div>
             <InputBase
               placeholder="Search Video"
-              // value={this.state.searchTerm}
+              value={this.state.searchTerm}
               ref={this.searchTermInput}
-              onChange={this.goToSearchResultsPage}
+              onChange={event => this.goToSearchResultsPage(event.target.value)}
             />
           </div>
         </Toolbar>
