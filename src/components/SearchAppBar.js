@@ -1,13 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
-import Menu from '@material-ui/core/Menu';
-import Typography from '@material-ui/core/Typography';
 
 
 
@@ -68,16 +65,16 @@ class SearchAppBar extends React.Component {
     this.state={
       searchTerm: ''
     }
-
+    this.searchTermInput= React.createRef();
     this.goToSearchResultsPage = this.goToSearchResultsPage.bind(this);
   }
-  searchTermInput= React.createRef();
+  // searchTermInput= React.createRef();
 
   goToSearchResultsPage(event) {
     event.preventDefault();
-    // const searchTermCons = this.searchTermInput.value.value;
-    const searchTermCons = this.state.searchTerm;
-    // this.props.history.push(`search_results/${searchTermCons}`);
+    const searchTermCons = this.searchTermInput.value.value;
+    // const searchTermCons = this.state.searchTerm;
+    this.props.history.push(`search_results/${searchTermCons}`);
     console.log(searchTermCons);
   }
 
@@ -96,15 +93,20 @@ class SearchAppBar extends React.Component {
             </div>
             <InputBase
               placeholder="Search Video"
-              value={this.state.searchTerm}
+              // value={this.state.searchTerm}
               ref={this.searchTermInput}
-              onChange={event => this.goToSearchResultsPage(event.target.value)}
+              onChange={event => this.onInputChange(event.target.value)}
             />
           </div>
         </Toolbar>
 
       </AppBar>
     );
+  }
+
+  onInputChange(searchTerm) {
+    this.setState({searchTerm});
+    this.props.onSearchTermChange(searchTerm);
   }
 }
 
