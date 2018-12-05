@@ -7,13 +7,10 @@ const style = {
     zepic: {
         backgroundImage: `url(${topImage})`,
         backgroundSize: 'center',
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: '50% 100%',
-        height: '800px',
-        position: 'relative',
-        // width: '120%',
-        maxWidth: '1280px',
-        bottom: '7vw',
+        backgroundPosition: '100% 100%',
+        display: 'block',
+        height: '45vw',
+        maxWidth: '100vw',
     },
     scrolltext: {
         color: 'white',
@@ -21,8 +18,8 @@ const style = {
         width: '100%',
         display: 'block',
         position: 'absolute',
-        marginTop:'-150px',
-        marginLeft: '50%',
+        marginTop:'-20vw',
+        marginLeft: '-12vw',
     },
     imgscroll: {
         height: '50%',
@@ -36,6 +33,12 @@ const BigWall = () => {
     return (
        <Fragment>
             <div style={style.zepic} />
+            <Typography variant='h6' style={style.scrolltext}>
+                SCROLL TO DISCOVER
+                <img 
+                src="http://www.wordapp.io/wpsite/wp-content/uploads/2016/11/white-arrow-down.png"
+                style={style.imgscroll} />
+            </Typography>
        </Fragment>
 
     )
