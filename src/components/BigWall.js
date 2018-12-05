@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Typography } from '@material-ui/core';
 
 const topImage = '../../style/images/leVall.jpeg';
@@ -25,7 +25,6 @@ const style = {
     }
 };
 
-
 const BigWall = () => {
     return (
             <div style={style.zepic} >
@@ -35,9 +34,7 @@ const BigWall = () => {
                 style={style.imgscroll} />
             </Typography>
             </div>
-
     )
-
 }
 
 export default BigWall;

@@ -106,7 +106,8 @@ class SearchAppBar extends React.Component {
 
   onInputChange(searchTerm) {
     this.setState({searchTerm});
-    this.props.onSearchTermChange(searchTerm);
+    // this.props.onSearchTermChange(searchTerm);
+    this.props.history.push(`search_results/${searchTerm}`);
   }
 }
 

@@ -9,6 +9,12 @@ const htmlPlugin = new HtmlWebPackPlugin({
 
 
 module.exports = {
+  devtool: 'eval-source-map',
+  entry: `${srcPath}/index.js`,
+  output: {
+    path: __dirname + "/dist",
+    filename: "bundle.js"
+  },
   module: {
     rules: [
       {
