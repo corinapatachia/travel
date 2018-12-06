@@ -1,9 +1,8 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Typography } from '@material-ui/core';
 import sampleStories from '../../data/data';
 import Story from './Story';
 import GridList from '@material-ui/core/GridList';
-import Divider from '@material-ui/core/Divider';
 
 const style = {
     root: {
@@ -11,6 +10,9 @@ const style = {
         margin: '0 5.20833%',
         padding: '40px 20px 0 20px',
         marginTop: '-5vw'
+    },
+    rootGrid: {
+        flexGrow: 1,
     },
     dreamText: {
         color: '#d08a00',
@@ -49,7 +51,7 @@ class MainContent extends React.Component {
                 <Typography style={style.dreamText}>
                     Start dreaming now
                 </Typography>
-                <GridList style={style.gridList} cols={1} cellHeight={160}>
+               <GridList style={style.gridList} cols={1} cellHeight={160}>
                     {Object.keys(this.state.stories).map(key => <Story key={key} details={this.state.stories[key]} />)}
                 </GridList>
             </div>
