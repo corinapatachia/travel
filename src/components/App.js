@@ -3,14 +3,30 @@ import SearchAppBar from './SearchAppBar';
 import BigWall from './BigWall';
 import MainContent from './MainContent';
 
-const App = () => {
-        return (
-                <Fragment>
-                    <SearchAppBar/>
-                    <BigWall />
-                    <MainContent />
-                </Fragment> 
-        );
+class App extends Component {
+        constructor(props) {
+                super();
+
+                this.state = {
+                        searchTerm: ''
+                }
+                this.redirectToSearchPage = this.redirectToSearchPage.bind(this);
+        }
+
+        redirectToSearchPage(searchTerm) {
+                this.setState({ searchTerm });
+                this.props.history.push(`search_results/${searchTerm}`);
+        }
+        render() {
+                return (
+                        <Fragment>
+                                <SearchAppBar redirectToSearchPage={this.redirectToSearchPage} />
+                                <BigWall />
+                                <MainContent />
+                        </Fragment>
+                );
+        }
+
 }
 
 export default App;
