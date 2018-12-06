@@ -1,45 +1,40 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Typography } from '@material-ui/core';
-import zIndex from '@material-ui/core/styles/zIndex';
 
 const topImage = '../../style/images/leVall.jpeg';
 const style = {
     zepic: {
         backgroundImage: `url(${topImage})`,
         backgroundSize: 'center',
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: '50% 100%',
-        height: '800px',
-        position: 'relative',
-        // width: '120%',
-        maxWidth: '1280px',
-        bottom: '7vw',
+        backgroundPosition: '80% 80%',
+        display: 'block',
+        height: '45vw',
+        maxWidth: '100vw',
     },
     scrolltext: {
         color: 'white',
         height: '50px',
         width: '100%',
-        display: 'block',
         position: 'absolute',
-        marginTop:'-150px',
-        marginLeft: '50%',
+        marginTop:'30vw',
+        marginLeft: '56vw',
     },
     imgscroll: {
         height: '50%',
-        width: '5%',
         display: 'block',
     }
 };
 
-
 const BigWall = () => {
     return (
-       <Fragment>
-            <div style={style.zepic} />
-       </Fragment>
-
+            <div style={style.zepic} >
+            <Typography variant='h6' style={style.scrolltext}>
+                SCROLL TO DISCOVER <img 
+                src="http://www.wordapp.io/wpsite/wp-content/uploads/2016/11/white-arrow-down.png"
+                style={style.imgscroll} />
+            </Typography>
+            </div>
     )
-
 }
 
 export default BigWall;

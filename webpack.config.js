@@ -1,7 +1,7 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const path = require('path');
 
-const srcPath = path.resolve(__dirname, "./src/"); 
+const srcPath = path.resolve(__dirname, "./src/");
 const htmlPlugin = new HtmlWebPackPlugin({
   template: `${srcPath}/index.html`,
   filename: "./index.html"
@@ -9,6 +9,15 @@ const htmlPlugin = new HtmlWebPackPlugin({
 
 
 module.exports = {
+  devtool: 'eval-source-map',
+  entry: `${srcPath}/index.js`,
+  output: {
+    path: __dirname + "/dist",
+    filename: "bundle.js"
+  },
+  devServer: {
+    historyApiFallback: true
+  },
   module: {
     rules: [
       {

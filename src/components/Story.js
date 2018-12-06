@@ -36,7 +36,7 @@ const style = {
         height: 0,
         paddingTop: '56.25%', // 16:9
         width: '350px',
-        height: '200px'
+        height: '200px',
     },
     actions: {
         display: 'flex',

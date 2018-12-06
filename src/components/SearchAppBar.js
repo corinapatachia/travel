@@ -62,20 +62,6 @@ class SearchAppBar extends React.Component {
   constructor(props){
     super(props);
 
-    this.state={
-      searchTerm: ''
-    }
-    this.searchTermInput= React.createRef();
-    this.goToSearchResultsPage = this.goToSearchResultsPage.bind(this);
-  }
-  // searchTermInput= React.createRef();
-
-  goToSearchResultsPage(event) {
-    event.preventDefault();
-    const searchTermCons = this.searchTermInput.value.value;
-    // const searchTermCons = this.state.searchTerm;
-    this.props.history.push(`search_results/${searchTermCons}`);
-    console.log(searchTermCons);
   }
 
   render() {
@@ -93,9 +79,8 @@ class SearchAppBar extends React.Component {
             </div>
             <InputBase
               placeholder="Search Video"
-              // value={this.state.searchTerm}
               ref={this.searchTermInput}
-              onChange={event => this.onInputChange(event.target.value)}
+              onChange={event => this.props.redirectToSearchPage(event.target.value)}
             />
           </div>
         </Toolbar>
@@ -104,10 +89,6 @@ class SearchAppBar extends React.Component {
     );
   }
 
-  onInputChange(searchTerm) {
-    this.setState({searchTerm});
-    this.props.onSearchTermChange(searchTerm);
-  }
 }
 
 
