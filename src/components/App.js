@@ -14,6 +14,7 @@ class App extends Component {
         }
 
         redirectToSearchPage(searchTerm) {
+                // console.log(`searchTerm from App.js is called with the term ${searchTerm}`);
                 this.setState({ searchTerm });
                 this.props.history.push(`search_results/${searchTerm}`);
         }

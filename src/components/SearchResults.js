@@ -6,38 +6,43 @@ import VideoList from './VideoList';
 
 const API_KEY = 'AIzaSyAnuwmbt9MvvHSxE0_ZZSu4HVswhM0vnSs';
 
-class SearchResults extends React.Component{
-    constructor(props){
-        super(props); 
+class SearchResults extends React.Component {
+    constructor(props) {
+        super(props);
 
         this.state = {
             videos: [],
-            selectedVideo: null
+            selectedVideo: null,
+            term: this.props.match.params.searchTermConst
         };
-
-        this.videoSearch('bigar');
+    }
+    componentDidUpdate(){
+        const searchTermConst = this.state.term;
+        this.videoSearch(searchTermConst);
     }
 
-    videoSearch(term) {
-        YTSearch({ key: API_KEY, term: term }, (videos) => {
+    videoSearch(givenTerm) {
+       
+        YTSearch({ key: API_KEY, term: givenTerm }, (videos) => {
 
             this.setState({
                 videos: videos,
-                selectedVideo: videos[0]
+                selectedVideo: videos[0],
+                term: givenTerm
             });
         });
     }
-render(){
-    return(
-        <Fragment>
-            <SearchAppBar />
-            <VideoDetail video={this.state.selectedVideo} />
-            <VideoList
+    render() {
+        return (
+            <Fragment>
+                <SearchAppBar redirectToSearchPage={this.redirectToSearchPage}/>
+                <VideoDetail video={this.state.selectedVideo} />
+                <VideoList
                     onVideoSelect={selectedVideo => this.setState({ selectedVideo })}
                     videos={this.state.videos} />
-        </Fragment>
-    )
-}
+            </Fragment>
+        )
+    }
 }
 
 export default SearchResults;

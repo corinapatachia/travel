@@ -3,6 +3,7 @@ import { Typography } from '@material-ui/core';
 import sampleStories from '../../data/data';
 import Story from './Story';
 import GridList from '@material-ui/core/GridList';
+import DetailedEntry from './DetailedEntry';
 
 const style = {
     root: {
@@ -54,6 +55,7 @@ class MainContent extends React.Component {
                <GridList style={style.gridList} cols={1} cellHeight={160}>
                     {Object.keys(this.state.stories).map(key => <Story key={key} details={this.state.stories[key]} />)}
                 </GridList>
+                <DetailedEntry />
             </div>
         )
     }

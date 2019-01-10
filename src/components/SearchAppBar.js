@@ -1,10 +1,9 @@
 import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
+import CustomMenu from './CustomMenu';
 
 
 
@@ -59,9 +58,20 @@ const styles = {
 };
 
 class SearchAppBar extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
 
+    this.searchTermInput = React.createRef();
+    this.state = {
+      term: ''
+    }
+
+    this.handleInputUpdate = this.handleInputUpdate.bind(this);
+
+  }
+
+  handleInputUpdate(event) {
+    console.log(event.currentTarget.value);
   }
 
   render() {
@@ -70,9 +80,7 @@ class SearchAppBar extends React.Component {
       <AppBar position="static" color="default" style={styles.root}>
         <Toolbar>
           <img src="https://www.visitcalifornia.com/sites/all/themes/vca/images/bg-header.png" style={styles.lineseparator} />
-          <IconButton style={styles.menuButton} aria-label="Menu">
-            <MenuIcon />
-          </IconButton>
+          {/* <CustomMenu redirectToSearchPage = {this.props.redirectToSearchPage}/> */}
           <div style={styles.search}>
             <div style={styles.searchIcon}>
               <SearchIcon />
@@ -80,16 +88,16 @@ class SearchAppBar extends React.Component {
             <InputBase
               placeholder="Search Video"
               ref={this.searchTermInput}
-              onChange={event => this.props.redirectToSearchPage(event.target.value)}
+              value={this.state.term}
+              // onChange={event => this.props.redirectToSearchPage(event.target.value)}
+              onChange={event => this.handleInputUpdate(event)}
             />
           </div>
         </Toolbar>
-
       </AppBar>
-    );
-  }
-
-}
-
+    )
+  };
+};
 
 export default SearchAppBar;
+
