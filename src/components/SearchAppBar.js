@@ -70,8 +70,9 @@ class SearchAppBar extends React.Component {
 
   }
 
-  handleInputUpdate(event) {
+  handleInputUpdate(event){
     console.log(event.currentTarget.value);
+    // const updatedSearchTerm = {...this.state.term}
   }
 
   render() {
@@ -80,7 +81,7 @@ class SearchAppBar extends React.Component {
       <AppBar position="static" color="default" style={styles.root}>
         <Toolbar>
           <img src="https://www.visitcalifornia.com/sites/all/themes/vca/images/bg-header.png" style={styles.lineseparator} />
-          {/* <CustomMenu redirectToSearchPage = {this.props.redirectToSearchPage}/> */}
+          <CustomMenu redirectToSearchPage = {this  .props.redirectToSearchPage}/>
           <div style={styles.search}>
             <div style={styles.searchIcon}>
               <SearchIcon />
@@ -89,11 +90,11 @@ class SearchAppBar extends React.Component {
               placeholder="Search Video"
               ref={this.searchTermInput}
               value={this.state.term}
-              // onChange={event => this.props.redirectToSearchPage(event.target.value)}
-              onChange={event => this.handleInputUpdate(event)}
+              onChange={event => this.props.redirectToSearchPage(event.target.value)}
+              // onChange={event => this.handleInputUpdate(event)}
             />
           </div>
-        </Toolbar>
+        </Toolbar> 
       </AppBar>
     )
   };
